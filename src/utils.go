@@ -102,8 +102,9 @@ func extractAudio(videoPath string, outputPath string) error {
 	// 构建FFmpeg命令
 	cmd := exec.Command("ffmpeg",
 		"-i", videoPath, // 输入视频文件
-		"-vn",             // 不输出视频流
-		"-acodec", "copy", // 复制音频流，如果需要转码可以替换为aac等编码器
+		"-vn",                // 不输出视频流
+		"-c:a", "libmp3lame", // 复制音频流，如果需要转码可以替换为aac等编码器
+		"-y",
 		outputPath, // 输出音频文件路径
 	)
 
