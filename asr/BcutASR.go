@@ -1,9 +1,9 @@
 package asr
 
 import (
-	"BcutASR/src"
 	"crypto/tls"
 	"encoding/json"
+	"github.com/H1d3rOne/BcutASR/src"
 	"log"
 	"net/http"
 	"os"
